@@ -1,12 +1,57 @@
 @charset "UTF-8";
+@font-face{
+    font-family: "car";
+    src: url(../font/font.woff);
+}
+@font-face{
+    font-family: "iconfont";
+    src: url(../font/font.woff);
+}
 //楼梯效果
 .m-navlist{
     width:100px;
     position: fixed;
     right:150px;
-    bottom:30px;
+    bottom:200px;
     color:#fff;
     list-style: none;
+    font-size: 12px;
+    text-align: center;
+    a{
+        display: block;
+        width:100px;
+        height:26px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(240, 48, 72);
+        border-bottom:1px solid #000;
+    }
+    .topPart{
+        display: block;
+        width:100px;
+        height:37px;
+        line-height:37px;
+        .u-iconfont{
+            font-family: "car";
+            font-size: 20px;
+            font-style: normal;
+            vertical-align: middle;
+            &::before{
+                content: "\e609";
+            }
+        }
+    }
+    .active{
+        background-color: rgba(0,0,0,.25);
+    }
+    .bottomPart{
+        height:37px;
+        span{
+            display: block;
+            line-height: 20px;
+            font-size: 28px;
+            font-family: "iconfont";
+        }
+    }
 }
 //商品主体
 .wrapMain{

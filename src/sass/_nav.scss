@@ -6,7 +6,7 @@
     width: 164px;
     text-align: left;
     background:linear-gradient(to right,#FF0305,#FF3060);
-    border-bottom: 1px solid #ff5160;
+    font-size: 14px;
     color:#fff;
 }
 .midNav{
@@ -52,9 +52,58 @@
 .catitmlst{//分类列表
     display: none;
     position: relative;
+    background: linear-gradient(to right,#f00,#ff3264);
     z-index:9;
     li{
-        @include catit(40px);
+        // @include catit(40px);
+        height: 41.81818181818182px;
+        line-height: 41.81818181818182px;
+        background: linear-gradient(90deg,red,#ff3264);
+        padding-left: 1px;
+        width: 164px;
+        cursor: pointer;
+        text-align: left;
+        padding-right: 3px;
+        border-bottom: 1px solid #ff5160;
+        img{
+            width: 44px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 20px 0 4px;
+        }
+        .o{
+            display: none;
+        }
+        .t{
+            display: inline-block;
+            vertical-align: middle;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            white-space: nowrap;
+            font-size:14px;
+        }
+        .gt{
+            display: inline-block;
+            vertical-align: middle;
+            color: #ff96ad;
+            font-size: 19px;
+            width: 16px;
+        }
+        &:hover{
+            border-bottom: 0;
+            div{
+                background-color: #fff;
+                color: #ff8e98;
+            }
+            .h{
+                display: none;
+            }
+            .o{
+                display: inline-block;
+            }
+        }
     }
 }
 .toplevel{
