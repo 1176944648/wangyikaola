@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@mixin imgBox($h,$url) {
+    width: 1000px;
+    height: $h;
+    background-size: 1000px $h;
+    background-image: $url;
+    background-position: center 0;
+}
+//广告
+.g-box{
+    width:1000px;
+    margin:0 auto;
+    .img-box1{
+        @include imgBox(260px,url(https://haitao.nosdn2.127.net/4c09f214-7140-4703-bbe2-006042c8af22T19010292003_1000_260.jpg?imageView&thumbnail=1250x325&quality=95&type=webp) )
+    }
+    .img-box2{
+        @include imgBox(225px,url(https://haitao.nos.netease.com/70bc7b3e-e603-4bac-a1c5-731749c1bc20T19010292004_1000_225.jpg?imageView&thumbnail=1250x281&quality=95&type=webp) )
+    }
+    .img-box3{
+        @include imgBox(296px,url(https://haitao.nosdn2.127.net/8b9144b3-228a-4904-8239-7f821fab2df8T19010211539_1000_296.jpg?imageView&thumbnail=1250x370&quality=95&type=webp) )
+    }
+}

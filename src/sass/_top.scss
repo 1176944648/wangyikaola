@@ -1,0 +1,15 @@
+// 头部广告
+#j-topbanner-anchor{
+    height:80px;
+    background:red;
+    a{
+        display: block;
+        height:100%;
+        img{
+            width:1920px;
+            height:100%;
+            position: relative;
+            left:-200px;
+        }
+    }
+}

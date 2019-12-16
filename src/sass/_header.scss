@@ -1,0 +1,204 @@
+@charset "UTF-8";
+//头部，登录
+@mixin triangle($t,$color,$l,$w,$r:0) {
+    top: $t;
+    border-color:$color;
+    position: absolute;
+    left: $l;
+    right: $r;
+    border-width: $w;
+    border-style: dashed dashed solid;
+    width: 0;
+    height: 0;
+    font-size: 0;
+}
+// 头部导航
+#topNav{
+    height: 30px;
+    background:#000;
+}  
+.wrapNav{
+    width:1090px;
+    margin:0 auto;
+    height:100%;
+    color: #999;
+    font-size:12px;
+    line-height:30px;
+    .topNavLeft{
+        float: left;
+        width:194px;
+        display: flex;
+        justify-content: space-between;
+        a{
+            color: #999;
+            &:hover{
+                color: #fff;
+            }
+        }
+    } 
+} 
+.app{
+    margin-left: 30px;
+    position: relative;
+    color: #999;
+    display: block;
+    float: left;
+    .m-notice{
+        position: absolute;
+        width:129px;
+        height:166.2px;
+        border:1px solid #ededee;
+        background:#fff;
+        text-align: center;
+        top:40px;
+        left:-30px;
+        padding:5px 5px 0;
+        display: none;
+        .arr{
+            @include triangle(-16px, transparent transparent #e4e4e4,55px,8px)
+        }
+        .arr1{
+            @include triangle(-16px, transparent transparent #fff,55px ,8px )
+        }
+        strong{
+            display: block;
+            padding: 4px 0;
+            font-size: 14px;
+            color: #000;
+            line-height: 18px;
+            font-weight: 400;
+            text-align: center;
+        }
+        img{
+            width:116px;
+            height:116px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+    &:hover{
+        color: #fff;
+        .m-notice{
+            display: block;
+        }
+    }
+}
+.topNavLeftLogin{
+    @extend .topNavLeft
+}
+.topNavRight{
+    float: right;
+    position: relative;
+    right: -3px;
+    display: flex;
+    height:30px;
+    align-items: center;
+    li{
+        float: left;
+        width:83px;
+        padding:0 10px;
+        position: relative;
+        text-align: center;
+        a{
+            color: #999;
+            &:hover{
+                color: #fff;
+                .arr{
+                    border-color: orangered transparent transparent;
+                }
+            }
+        }
+        .arr{
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            margin-top: -2px;
+            width: 0;
+            height: 0;
+            font-size: 0;
+            line-height: 0;
+            border-color: #999 transparent transparent;
+            border-style: solid dashed dashed;
+            border-width: 4px 4px 0;
+            transition:transform 0.3s;
+        }
+        .mcDropMenu{
+            position: absolute;
+            left:0px;
+            top: 29px;
+            width:123px;
+            height:129px;
+            box-shadow: 0 1px 1px rgba(0,0,0,.12);
+            padding: 4px 15px 12px 14px;
+            background: #fff;
+            border: 1px solid #e8e8ea;
+            text-align: left;
+            display: none;
+        }
+    }
+    .mcDropMenu{
+        a{
+            word-wrap: normal;
+            white-space: nowrap;
+            height: 28px;
+            line-height: 28px;
+            cursor: pointer;
+            color: #000;
+            text-indent: 20px;
+            span{
+                position: relative;
+                display: inline-block;
+                top:7px;
+                width: 14px;
+                height: 14px;
+                font-style: normal;
+                font-weight: 500;
+                background: url(../img/sprite.png) no-repeat;
+            }
+            .kefu{
+                background-position: -5px -290px;
+            }
+            .help{
+                background-position: -5px -324px;
+            }
+            .protect{
+                background-image: url(https://haitao.nos.netease.com/ba93f103-e5c3-4184-9800-930c25486e4d_52_52.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            .rule{
+                background-position: -5px -351px;
+            }
+        }    
+    }
+    .dropmenu:last-child{
+        width:66px;
+        .arr{
+            right:12px;
+        }
+    }
+    .dropmenu:hover{
+        background: #fff;
+        a:hover{
+            color: orangered;
+        }
+        .mcDropMenu{
+            display: block;
+            z-index: 9;
+        }
+        .arr{
+            transform: rotate(180deg);
+            
+        }
+    }   
+}
+
+
+
+
+
+
+
+
+
+

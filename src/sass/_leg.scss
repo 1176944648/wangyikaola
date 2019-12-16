@@ -1,0 +1,127 @@
+@charset "UTF-8";
+.footBgTop{
+    border-top: 1px solid #eaeaea;
+    height:150px;
+    background: #fff;   
+}
+.box{
+    background-color: transparent;
+    width:1100px;
+    height:calc(100% - 1px);
+    margin: auto;
+    border-bottom: 1px solid #eaeaea;
+    #btmlist{
+        padding: 49px 0;
+        
+    }
+}
+.footBgBot{
+    background: #fff;
+    height:263px;
+}
+#btmlist{
+    .clearfix{
+        li{
+            float: left;
+            width: 233px;
+            margin-left: 42px;
+            .btmIcon{
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                border: 2px solid #d6d6d6;
+                text-align: center;
+                line-height: 44px;
+                font-size: 20px;
+                font-weight: 700;
+                float: left;
+                margin-right: 12px;
+            }
+            .tit{
+                font-size: 18px;
+                font-weight: 700;
+                display: block;
+                line-height: 22px;
+            }
+            .desc{
+                font-size: 14px;
+                display: block;
+                line-height: 22px;
+            }
+            .last::after{
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+            }
+        }
+    }
+}
+#guideList{
+    padding: 45px 0 90px;
+    li{
+        float: left;
+        padding: 0 0 0 21px;
+        height: 128px;
+    }
+    .first{
+        width: 218px;
+        margin-right: 40px;
+        padding-left: 0;
+        .logo{
+            display: block;
+            width:220px;
+            height:43px;
+            margin-bottom: 20px;
+            background-image: url(https://haitao.nos.netease.com/88330630-0c6e-4653-9f0a-92e9ae5a2f42_420_130.png?imageView&thumbnail=220x0&quality=85&v=1);
+            background-size: 100%;
+        }
+        .focuson{
+            height: 32px;
+            .label{
+                vertical-align: middle;
+                font-size: 12px;
+            }
+            .itm{
+                position: relative;
+                margin-left: 10px;
+                vertical-align: middle;
+            }
+        }
+    }
+    .f-wd100{
+        width:100px;
+        margin-right:20px;
+        a{
+            color:#333;
+            font-size: 12px;
+        }
+        dl{
+            dt{
+                margin: -4px 0 10px;
+                span{
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+            dd{
+                line-height:29px;
+            }
+        }
+    }
+    .last{
+        margin-left: 10px;
+        width: 108px;
+        padding: 0;
+        text-align: center;
+        img{
+            width:108px;
+            height:108px;
+        }
+        span{
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+//导航  
+@mixin catit ($h){
+    height: $h;
+    line-height: 40px;
+    width: 164px;
+    text-align: left;
+    background:linear-gradient(to right,#FF0305,#FF3060);
+    border-bottom: 1px solid #ff5160;
+    color:#fff;
+}
+.midNav{
+    height:40px;
+    #topTab{//版心
+        position: relative;
+        height: 40px;
+        width: 1090px;
+        margin: 0 auto;
+        line-height: 40px;
+        .toplevel{//所有分类
+            float: left;
+            @include catit(40px);
+            &:hover{
+                .catitmlst{
+                    display: block;
+                }
+            }
+        }
+        .funcTab{//导航
+            float: left;
+            padding-left: 25px;
+            position: relative;
+            height: 40px;
+            .navitm{//导航列表
+                float: left;
+                height: 40px;
+                overflow: hidden;
+                padding: 0 20px;
+                font-weight:600;
+            }
+        }
+    }
+}
+.navitm{
+    a{
+        color:#333;
+        &:hover{
+            color:#FF394B;
+        }
+    }
+}
+.catitmlst{//分类列表
+    display: none;
+    position: relative;
+    z-index:9;
+    li{
+        @include catit(40px);
+    }
+}
+.toplevel{
+    .lineicon{//横线
+        display: inline-block;
+        margin: 0 24px 0 15px;
+        width: 15px;
+        height: 12px;
+        overflow: hidden;
+        i{
+            width: 15px;
+            height: 0;
+            border-top: 2px solid #ddd;
+            display: block;
+            margin-bottom: 3px;
+        }
+    }
+}

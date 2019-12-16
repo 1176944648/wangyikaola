@@ -1,0 +1,123 @@
+@charset "UTF-8";
+//logo
+header{
+    height:100px;
+    .docHeadWrap{//版心
+        width:1090px;
+        margin:0 auto;
+        height:100px;
+        color: #333;
+        position: relative;
+        .logo_kaola_new{//logo
+            background-image: url(https://haitao.nos.netease.com/88330630-0c6e-4653-9f0a-92e9ae5a2f42_420_130.png);
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 330px;
+            height: 65px;
+            line-height: 65px;
+            outline: none;
+            cursor: pointer;
+            z-index: 9;
+            background-repeat: no-repeat;
+            background-position: 0;
+            background-size: auto 65px;
+        }
+    }
+    .m-shopcartnew{//购物车按钮
+        display: block;
+        position: absolute;
+        right: 76px;
+        top: 33px;
+        width: 110px;
+        height: 40px;
+        background-color: #fff;
+        line-height: 36px;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 36px;
+        border: 2px solid #ff1e32;
+        color:#333;
+        .shop-cart-icon{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 2px;
+            margin-bottom: -5px;
+            background: url(https://haitao.nos.netease.com/14f1eb69-f7c0-4d4f-95d8-4aee8e2e1f1b.png?imageView=&quality=90&thumbnail=20x0) no-repeat 0 0;
+        }
+        .wrap{
+            display: inline-block;
+            padding-left: 6px;
+            background: none;
+            vertical-align: middle;
+        }
+        &:hover{
+            background-color: #FFF4F5;
+            color: #FF1E32;
+        }
+    }
+}
+.topsearchbox{//搜索外框
+    position: absolute;
+    left: 343px;
+    top: 33px;
+    width: 511px;
+    height: 40px;
+    border: 2px solid rgb(255,35,55);
+    border-radius: 40px;
+    .w-icon-26{//输入框前放大镜
+        position: absolute;
+        left: 8px;
+        top: 11px;
+        width: 14px;
+        height: 14px;
+        background-position: -466px -667px;
+        background-image: url(../img/sprite.png);
+    }
+    .wrap{//输入框外框
+        float: left;
+        margin: 2px 1px;
+        padding: 4px 39px 6px 30px;
+        background-color: #fff;
+        border-radius: 24px 0 0 24px;
+        #topSearchInput{//输入框
+            width: 410px;
+            height: 24px;
+            line-height: 24px;
+            border: 0;
+            font-size: 13px;
+            vertical-align: middle;
+            display: inline-block;
+            outline: none;
+        }
+        .topsearchboxBackGround{//搜索按钮背景
+            width: 60px;
+            height: 40px;
+            border-radius: 40px;
+            position: absolute;
+            top: -2px;
+            right: -1px;
+            background-color: #ff2337;
+        }
+    }
+}
+#topSearchInput::-webkit-input-placeholder{//输入框提示文字样式
+    color:#9d9d9d;
+    font-style:oblique;
+}
+.topsearchboxBackGround{
+    #topSearchBtn{//搜索按钮
+        height: 40px;
+        width: 50px;
+        font-size: 19px;    
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        background: url(https://haitao.nos.netease.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?imageView=&quality=85&thumbnail=20x0&v=1)   no-repeat 50%;
+    }
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+@import "header";
+@import "title";
+@import "nav";
+@import "slideshow";
+@import "advertising";
+@import "main";
+@import "leg";
+@import "footer";
+@import "goodslist";

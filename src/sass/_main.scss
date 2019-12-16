@@ -1,0 +1,35 @@
+@charset "UTF-8";
+//楼梯效果
+.m-navlist{
+    width:100px;
+    position: fixed;
+    right:150px;
+    bottom:30px;
+    color:#fff;
+    list-style: none;
+}
+//商品主体
+.wrapMain{
+    background: #fff;
+    padding-bottom: 100px;
+}
+main{
+    margin:auto;
+    width:1000px;
+}
+.goods{
+    width:100%;
+    height:1490px;
+    background-color: rgb(240, 240, 240);
+    .title{
+        color:#fff;
+        width:100%;
+        margin:10px 0;
+        padding:0 5px;
+        height:60px;
+        line-height:60px;
+        text-align: center;
+        font-size: 28px;
+        background-color: rgb(227, 20, 54);
+    }
+}

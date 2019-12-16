@@ -1,0 +1,30 @@
+@charset "UTF-8";
+footer{
+    height:152px;
+    background-color: #333;
+}
+#aboutNEST{
+    color: #c2c2c2;
+    position: relative;
+    padding: 20px 0;
+    background: #333;
+    line-height: 26px;
+    text-align: center;
+    font-size: 12px;
+    .text:hover{
+        text-decoration:underline #c2c2c2;
+    }
+    a{
+        color:#c2c2c2;
+        img{
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+    .m-license{
+        margin-left: 20px;
+    }
+    .f-tac{
+        text-align: center;
+    }
+}
