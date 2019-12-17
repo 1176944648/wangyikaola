@@ -44,9 +44,51 @@
             text-overflow: ellipsis;
             font-weight:500;
         }
-        span{
-            color:rgb(255, 30, 50);
-            margin: 0 15px 5px;
+        .m-priceitem{
+            color: rgb(227, 20, 54);
+            margin: 0 5px;
+            height: 22px;
+            overflow: hidden;
+            white-space: normal;
+            line-height: 22px;
+            .price{
+                font-size: 20px;
+                font-weight: 700;
+                white-space: normal;
+                line-height: 22px;
+            }
+            .rmb{
+                font-size: 12px;
+                font-weight: 400;
+                font-style: normal;
+            }
+            .mktprice{
+                color: #999;
+                transform: translateY(1px);
+                white-space: normal;
+                line-height: 22px;
+                font-size: 12px;
+            }
+        }
+        .goods-btn{
+            height: 22px;
+            line-height: 22px;
+            right: 5px;
+            position: absolute;
+            bottom: 10px;
+            .goods-btn-span{
+                background-color: rgb(227, 20, 54);
+                display: block;
+                height: 24px;
+                padding: 0 6px;
+                border-radius: 3px;
+                background: #e31436;
+                color: #fff;
+                font-size: 12px;
+                line-height: 24px;
+                text-align: center;
+                cursor: pointer;
+            }
         }
         &:hover{
             z-index:3;  

@@ -79,6 +79,7 @@ class Stairs {
         this.top = this.main.offsetTop;
         this.height = this.allgoodslist[0].offsetHeight;
         this.back = $(".bottomPart");
+        this.goodslist = $(".goodslist");
     }
     init() {
         let _this = this;
@@ -88,14 +89,14 @@ class Stairs {
         //点击跳转
         for (let i of this.btn) {
             i.onclick = function (ev) {
-                ev=ev||event;
+                ev = ev || event;
                 _this.skip(this);
                 this.addClass("active");
-               if(ev.preventDefault){
-                ev.preventDefault();
-               }else{
-                ev.returnValue = false;
-               }
+                if (ev.preventDefault) {
+                    ev.preventDefault();
+                } else {
+                    ev.returnValue = false;
+                }
             }
         }
         //回到顶部
@@ -112,7 +113,7 @@ class Stairs {
         if (document.documentElement.scrollTop >= this.top - 15) {
             this.navlist.css({
                 display: "block"
-            }); 
+            });
         } else {
             this.navlist.css({
                 display: "none"
@@ -128,19 +129,60 @@ class Stairs {
     //点击跳转界面
     skip(obj) {
         this.cleanr();
-        document.documentElement.scrollTop =this.allgoodslist[obj.index()].offsetTop;
+        this.render(obj.index());
+        document.documentElement.scrollTop = this.allgoodslist[obj.index()].offsetTop;
     }
     //4.触发滚动条，给对应的楼梯添加active类
-    louti(){
-        let srcolltop=document.documentElement.scrollTop;
-        for(let i of this.allgoodslist){
-            let goodstop=i.offsetTop+i.offsetHeight/2;
-            if(goodstop>srcolltop){
+    louti() {
+        let srcolltop = document.documentElement.scrollTop;
+        for (let i of this.allgoodslist) {
+            let goodstop = i.offsetTop + i.offsetHeight / 2;
+            if (goodstop > srcolltop) {
                 this.cleanr();
                 this.btn[i.index()].addClass("active");
+                this.render(i.index());
                 return false;
             }
         }
+    }
+    //数据渲染，利用楼梯效果实现懒加载
+    render(index) {
+        console.log(index);
+        ajax({
+            url: "http://10.31.161.143/wangyikaola/php/index_render.php",
+            dataType: "json"
+        }).then((data) => {
+            let obj = data[index];
+            let str = "";
+            for (let i = 0; i < 5; i++) {
+                for (let value of obj) {
+                    str += `
+                    <li>
+                    <div class="goods-bd">
+                        <div class="goods-bd-border">
+                            <div class="goods-img">
+                                <a href="">
+                                    <img src="${value.url}"
+                                        alt="">
+                                </a>
+                            </div>
+                            <h5><a href="./details.html?${value.sid}">${value.title}</a></h5>
+                            <h6>${value.lable}</h6>
+                            <div class="m-priceitem">
+                                <span class="price"><i class="rmb">￥</i>${value.price}</span>
+                                <span class="mktprice"><del>￥${value.oldpic}</del></span>
+                            </div>
+                            <a href="./details.html?${value.sid}" class="goods-btn">
+                                <span class="goods-btn-span">立即购买</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                    `
+                }
+            }
+            this.goodslist[index].innerHTML = str;
+        })
     }
 }
 export { Slideshow, Stairs };
