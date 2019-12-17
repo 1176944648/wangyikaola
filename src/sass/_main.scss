@@ -17,6 +17,7 @@
     list-style: none;
     font-size: 12px;
     text-align: center;
+    display: none;
     a{
         display: block;
         width:100px;
@@ -24,6 +25,7 @@
         color: rgb(255, 255, 255);
         background-color: rgb(240, 48, 72);
         border-bottom:1px solid #000;
+        line-height:26px;
     }
     .topPart{
         display: block;
@@ -41,10 +43,10 @@
         }
     }
     .active{
-        background-color: rgba(0,0,0,.25);
+        background-color: #B42436;
     }
     .bottomPart{
-        height:37px;
+        height:45px;
         span{
             display: block;
             line-height: 20px;

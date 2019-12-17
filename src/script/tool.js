@@ -103,11 +103,11 @@ function $(select) {
     let obj = null;
     //添加类
     function addClass(classname) {
-            let str = this.className;
-            let strarr = str.split(" ");
-            strarr.push(classname);
-            str = strarr.join(" ");
-            this.className = str;
+        let str = this.className;
+        let strarr = str.split(" ");
+        strarr.push(classname);
+        str = strarr.join(" ");
+        this.className = str;
     };
     //删除类
     function removeClass(classname) {
@@ -120,30 +120,66 @@ function $(select) {
             this.className = str;
         }
     }
-    //目标元素索引
-    function index(){
-        return this.order;
+    //添加css样式
+    function css(obj) {
+        for (let key in obj) {
+            this.style[key] = obj[key];
+        }
+        return this;
     }
     //鼠标移入移出事件
-    function hover(a,b){
-        this.onmouseover=a;
-        this.onmouseout=b;
+    function hover(a, b) {
+        this.onmouseover = a;
+        this.onmouseout = b;
+        return this;
     }
+    //找到除自己以外的兄弟元素
+    // other = function () {
+    //     let siblingElement = [];
+    //     let parentAllElement = [];
+    //     if (!this.parentNode) {
+    //         return siblingElement;
+    //     };
+    //     parentAllElement = this.parentNode.getElementsByTagName(this.tagName);
+    //     for (let i = 0; i < parentAllElement.length; i++) {
+    //         if (parentAllElement[i] != this) {
+    //             siblingElement.push(parentAllElement[i]);
+    //         }
+    //     }
+    //     return siblingElement;
+    // };
+    //获取元素
     if (document.querySelectorAll(select).length > 1) {
         obj = document.querySelectorAll(select);
-        for (let i=0;i<obj.length;i++) {
-            obj[i].order=i;
-            obj[i].addClass = addClass;
-            obj[i].removeClass = removeClass;
-            obj[i].index=index;
-            obj[i].hover=hover;
+        let arr = []
+        for (let j of obj) {
+            arr.push(j);
+        }
+        for (let i of obj) {
+            i.addClass = addClass;
+            i.removeClass = removeClass;
+            i.index = function (){//获取目标元素索引
+                return arr.indexOf(this);
+            };
+            i.hover = hover;
+            i.css = css;
         }
     } else {
         obj = document.querySelector(select);
         obj.addClass = addClass;
         obj.removeClass = removeClass;
-        obj.hover=hover;
+        obj.hover = hover;
+        obj.css = css;
     }
     return obj;
 };
-export { ajax, cookie, $ };
+//事件绑定
+function addEvent(obj, etype, fn, bool) {
+    if (obj.addEventListener) {
+        obj.addEventListener(etype, fn, bool);
+    } else {
+        obj.attachEvent('on' + etype, fn);
+    }
+}
+
+export { ajax, cookie, $, addEvent };
