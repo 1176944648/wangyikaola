@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+html{
+    min-height: 100%;
+}
+body{
+    min-width: 1090px;
+    min-height: 100%;
+}
+#docHead{
+    border-bottom: 1px solid #e8e8ea;
+    position: relative;
+    height: 100px;
+    background: #fff;
+    z-index: 103;
+    height:100px;
+    #docHeadWrap{
+        width: 1000px;
+        position: relative;
+        height: 100px;
+        margin: 0 auto;
+        .logo_kaola_new{
+            background-image:url(https://haitao.nos.netease.com/88330630-0c6e-4653-9f0a-92e9ae5a2f42_420_130.png);
+            background-size: 100%;
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 330px;
+            height: 65px;
+            line-height: 65px;
+            outline: none;
+            cursor: pointer;
+            z-index: 9;
+            background-repeat: no-repeat;
+            background-position: 0;
+            background-size: auto 65px;
+        }
+        .u-login_topimage{
+            position: absolute;
+            top:0;
+            right: 40px;
+            z-index: 200;
+            height: 100px;
+            width: 504px;
+            background-image: url(https://haitao.nos.netease.com/30bee055-69af-4f3a-a232-5f330cbc98c1_1008_200.png?imageView&thumbnail=1008x0&quality=100&v=1);
+            background-size: 100%;
+        }
+    }
+}
+.login-banner{
+    background-color: #f8f8f8;
+    .login-body{
+        position: relative;
+        margin: 0 auto;
+        width: 1000px;
+        height: 600px;
+        img{
+            position: absolute;
+            left: -200px;
+            top: 50%;
+            margin-top: -101px;
+            width: 400px;
+            height: 203px;
+        }
+        #loginwrap{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            right: -100px;
+            width: 600px;
+            font-size: 12px;
+            transform: translateY(-50%);
+            border: 1px solid #eaeaea;
+            background-color: #fff;
+            #logins{
+                display: none;
+                background:#fff;
+            }
+            .register{
+                background:#fff;
+            }
+            .regtop{
+                position: relative;
+                height: 52px;
+                font-size: 16px;
+                line-height: 52px;
+                color: #333;
+                border-bottom: 1px solid #ddd;
+                background-color: #f8f8f8;
+                padding: 0 40px;
+                width: 600px;
+                }
+            .text{
+                font-weight: 700;
+                color: #e31436;
+            }
+            .gotologin{
+                float: right;
+                font-size: 12px;
+                cursor: pointer;
+                a{
+                    color: #51b8f1;
+                }
+            }
+            .logtop{
+                @extend .regtop;
+                display: none;
+            }
+            .m-cnt{
+                width: 600px;
+                padding: 20px 40px 15px;
+                background-color: #fff;
+                text-align: center;
+            }
+        }
+    }
+}
+.m-cnt{
+    .regManager{
+        padding-left: 20px;
+        p{
+            position: relative;
+            margin-bottom: 20px;
+            label{
+                float: left;
+                height: 42px;
+                width: 65px;
+                margin-right: 10px;
+                line-height: 42px;
+                font-size: 14px;
+                color: #666;
+                font-weight: 700;
+                text-align: right;
+            }
+            input[type="text"]{
+                position: relative;
+                float: left;
+                height: 16px;
+                width: 328px;
+                padding: 11px 10px;
+                margin-right: 10px;
+                border: 1px solid #ddd;
+                font-size: 14px;
+                color: #666;
+            }
+            input[type="password"]{
+                @extend input[type="text"]
+            }
+            &:after{
+                content: "";
+                display: block;
+                height: 0;
+                clear:both;
+                visibility: hidden;
+            }
+            span{
+                margin-top: 10px;
+                float: left;
+            }
+            input[type="submit"]{
+                height: 36px;
+                position: relative;
+                left:-50px;
+                background-color: #E31436;
+                color: #fff;
+                border-radius: 2px;
+                line-height: 36px;
+                font-size: 14px;
+                cursor: pointer;
+                border:0;
+                width:300px
+            }
+            input[type="button"]{
+                @extend input[type="submit"];
+            }
+        }
+    }
+}

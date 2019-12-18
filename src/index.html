@@ -9,24 +9,23 @@
     <link rel="shortcut icon" href="http://10.31.161.143/wangyikaola/dist/img/title-logo.ico" type="image/x-icon">
     <title>考拉海购</title>
     <link rel="stylesheet" href="./css/index.css">
-    <!-- <script src="./script/index.js" type="module" async="true"></script> -->
     <script src="./script/bundle.js"async="true"></script>
 </head>
 
-<body>
+<body id="index">
     <!-- 登录导航 -->
     <nav id="topNav">
         <div class="wrapNav">
             <div class="topNavLeft">
                 <span>考拉欢迎你！</span>
-                <a href="login.html" class="login">登录</a>
-                <a href="registry.html" target="_blank">免费注册</a>
+                <a href="login.html?flag=login" class="login">登录</a>
+                <a href="login.html?flag=register" target="_blank">免费注册</a>
             </div>
             <div class="topNavLeftLogin" style="width:146.5px; display:none;">
                 <p>
-                    您好，<span class="username">食堂泼辣酱</span>
+                    您好，<span class="username"></span>
                 </p>
-                <a href="javascript:;" target="_blank">退出</a>
+                <a href="javascript:;" class="quit">退出</a>
             </div>
             <a href="" class="app">手机考拉
                 <span class="m-notice">

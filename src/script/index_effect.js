@@ -6,6 +6,10 @@ class Slideshow {
         this.btnprev = $(".prev");
         this.btnnext = $(".next");
         this.wrap = $(".img-panel");
+        this.login=$(".topNavLeftLogin");
+        this.nologin=$(".topNavLeft");
+        this.user=$(".topNavLeftLogin .username");
+        this.quit=$(".topNavLeftLogin .quit");
         this.num = 0;
         this.timer = null;
     }
@@ -33,6 +37,14 @@ class Slideshow {
         }, function () {
             _this.timing();
         })
+        this.exist();
+        //给退出键添加点击事件
+        this.quit.onclick=()=>{
+            cookie.delcookie("username");
+            this.exist();
+        }
+        
+        
     }
     cleanr() {
         for (let j of this.btnList) {
@@ -69,6 +81,17 @@ class Slideshow {
             this.eventright();
         }, 5000);
     }
+    //判断是否存在用户名
+    exist(){
+        if(cookie.getcookie('username')){
+            this.login.css({display:"flex"});
+            this.nologin.css({display:"none"});
+            this.user.innerHTML=cookie.getcookie('username');
+        }else{
+            this.login.css({display:"none"});
+            this.nologin.css({display:"flex"});
+        }
+    }
 };
 class Stairs {
     constructor() {
@@ -103,9 +126,16 @@ class Stairs {
         this.back.onclick = () => {
             document.documentElement.scrollTop = 0;
         }
-        //刷新界面时ul的显示
+        //刷新界面时ul的显示和数据的渲染
         window.onload = () => {
             this.show();
+            for(let obj of this.goodslist){
+                let objTop=obj.offsetTop;
+                let height=document.documentElement.clientHeight+document.documentElement.scrollTop;
+                if(objTop<=height){
+                    this.datarender(obj.index());
+                }
+            }
         }
     }
     //滚轮显示ul;
@@ -145,9 +175,14 @@ class Stairs {
             }
         }
     }
-    //数据渲染，利用楼梯效果实现懒加载
+    //利用楼梯效果实现懒加载
     render(index) {
-        console.log(index);
+        if(this.goodslist[index].innerHTML===""){
+           this.datarender(index);
+        }
+    }
+    //获取数据进行渲染
+    datarender(index){
         ajax({
             url: "http://10.31.161.143/wangyikaola/php/index_render.php",
             dataType: "json"
@@ -161,12 +196,12 @@ class Stairs {
                     <div class="goods-bd">
                         <div class="goods-bd-border">
                             <div class="goods-img">
-                                <a href="">
+                                <a href="./details.html?sid=${value.sid}" target="_blank">
                                     <img src="${value.url}"
                                         alt="">
                                 </a>
                             </div>
-                            <h5><a href="./details.html?${value.sid}">${value.title}</a></h5>
+                            <h5><a href="./details.html?sid=${value.sid}">${value.title}</a></h5>
                             <h6>${value.lable}</h6>
                             <div class="m-priceitem">
                                 <span class="price"><i class="rmb">￥</i>${value.price}</span>

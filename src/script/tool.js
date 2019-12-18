@@ -133,21 +133,6 @@ function $(select) {
         this.onmouseout = b;
         return this;
     }
-    //找到除自己以外的兄弟元素
-    // other = function () {
-    //     let siblingElement = [];
-    //     let parentAllElement = [];
-    //     if (!this.parentNode) {
-    //         return siblingElement;
-    //     };
-    //     parentAllElement = this.parentNode.getElementsByTagName(this.tagName);
-    //     for (let i = 0; i < parentAllElement.length; i++) {
-    //         if (parentAllElement[i] != this) {
-    //             siblingElement.push(parentAllElement[i]);
-    //         }
-    //     }
-    //     return siblingElement;
-    // };
     //获取元素
     if (document.querySelectorAll(select).length > 1) {
         obj = document.querySelectorAll(select);

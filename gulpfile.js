@@ -81,7 +81,7 @@ gulp.task('runimg', function () {
 //browserify 插件使用
 gulp.task("browserify", function () {
     var b = browserify({
-        entries: ["dist/script/index.js"]
+        entries: ["dist/script/main.js"]
     });
 
     return b.bundle()
