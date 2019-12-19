@@ -1,10 +1,15 @@
 import { Slideshow, Stairs } from "./index_effect.js/";
-import { Tab , Register , Login} from "./login_effect.js";
-if (document.body.id === "index") {
+import { Tab, Register, Login } from "./login_effect.js";
+import { Detailslogin, Drender , Magnifying} from "./details_effect.js"
+if (document.querySelector("#index")) {
     new Slideshow().init();
     new Stairs().init();
-} else if (document.body.id === "login") {
+} else if (document.querySelector("#login")) {
     new Tab().init();
     new Register().init();
     new Login().init();
+} else if (document.querySelector("#details")) {
+    new Drender().init();
+    new Detailslogin().init();
+    new Magnifying().init();
 }

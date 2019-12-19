@@ -1,4 +1,4 @@
-import { ajax, cookie, $, addEvent } from "./tool.js";
+import {ajax, cookie, $, addEvent , bufferMove } from "./tool.js";
 class Slideshow {
     constructor() {
         this.picList = $(".img-list li");

@@ -15,5 +15,5 @@ if(isset($_POST["submit"])){
     $email=$_POST['email'];
     $tel=$_POST["tel"];
     $conn->query("insert user values(null,'$user','$pass','$email','$tel',NOW())");
-    header('location:http://10.31.161.143/wangyikaola/dist/login.html?flag=login');
+    header('location:http://10.31.161.143/wangyikaola/dist/index.html');
 }
