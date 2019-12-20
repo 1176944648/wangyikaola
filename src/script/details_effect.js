@@ -218,27 +218,24 @@ class Magnifying {
     //     clonebox.id="showImgBox1"
     //     this.box.appendChild(clonebox);
     //     let position = {
-    //         x: this.wrap.offsetLeft,
-    //         y: clonebox.offsetTop
+    //         x: 214.6,
+    //         y: 583.2
     //     };
     //     let distance = {
     //         x: this.car.offsetLeft - position.x,
     //         y: this.car.offsetTop - position.y
     //     };
-    //     co
-    //     let a = 0.003;
+    //     let a = 0.002;
     //     let b = (distance.y - a * distance.x * distance.x) / distance.x;
     //     let x = 0;
     //     let timer=setInterval(()=>{
     //         x += 10;
-    //         if(clonebox.offsetLeft>=this.car.offsetLeft){
+    //         if(214.6>=this.car.offsetLeft){
     //             clearInterval(timer);
-    //             console.log(1);
     //             this.box.removeChild(clonebox);
     //         }else{
     //             clonebox.style.left = position.x + x + 'px';
     //             clonebox.style.top = position.y + a * x * x + b * x + 'px';
-    //             console.log(2);
     //         }
     //     },1000/60)
     // }

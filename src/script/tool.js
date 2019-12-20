@@ -100,7 +100,7 @@ let cookie = {
 };
 //取元素
 function $(select) {
-    let obj = null;
+    let obj = document.querySelectorAll(select);
     //添加类
     function addClass(classname) {
         let str = this.className;
@@ -137,9 +137,12 @@ function $(select) {
         this.onmouseout = b;
         return this;
     }
+    //判断是否取到元素
+    if(!obj){
+        throw new Error("未获取到元素");
+    }
     //获取元素
-    if (document.querySelectorAll(select).length > 1) {
-        obj = document.querySelectorAll(select);
+    if (obj.length > 1) {
         let arr = []
         for (let j of obj) {
             arr.push(j);
