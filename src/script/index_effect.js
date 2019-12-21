@@ -201,13 +201,13 @@ class Stairs {
                                         alt="">
                                 </a>
                             </div>
-                            <h5><a href="./details.html?sid=${value.sid}">${value.title}</a></h5>
+                            <h5><a href="./details.html?sid=${value.sid}" target="_blank">${value.title}</a></h5>
                             <h6>${value.lable}</h6>
                             <div class="m-priceitem">
                                 <span class="price"><i class="rmb">￥</i>${value.price}</span>
                                 <span class="mktprice"><del>￥${value.oldpic}</del></span>
                             </div>
-                            <a href="./details.html?${value.sid}" class="goods-btn">
+                            <a href="./details.html?sid=${value.sid}"  target="_blank" class="goods-btn">
                                 <span class="goods-btn-span">立即购买</span>
                             </a>
                         </div>
