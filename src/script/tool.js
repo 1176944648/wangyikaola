@@ -99,7 +99,8 @@ let cookie = {
     }
 };
 //取元素
-function $(select) {
+function $(select,flag) {
+    flag=flag||false;
     let obj = document.querySelectorAll(select);
     //添加类
     function addClass(classname) {
@@ -142,7 +143,7 @@ function $(select) {
         throw new Error("未获取到元素");
     }
     //获取元素
-    if (obj.length > 1) {
+    if (obj.length > 1||flag) {
         let arr = []
         for (let j of obj) {
             arr.push(j);

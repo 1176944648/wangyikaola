@@ -205,41 +205,11 @@ class Magnifying {
     //添加购物车
     addCar() {
         if (cookie.getcookie('username')) {
-            // this.parabolic();
             this.save();
         } else {
             alert("您好请先登录");
         }
     }
-    // //抛物运动
-    // parabolic(){
-    //     let clonebox = this.imgBox.cloneNode(true);
-    //     clonebox.style.cssText = 'width:50px;height:50px;opacity:1;position: absolute;';
-    //     clonebox.id="showImgBox1"
-    //     this.box.appendChild(clonebox);
-    //     let position = {
-    //         x: 214.6,
-    //         y: 583.2
-    //     };
-    //     let distance = {
-    //         x: this.car.offsetLeft - position.x,
-    //         y: this.car.offsetTop - position.y
-    //     };
-    //     let a = 0.002;
-    //     let b = (distance.y - a * distance.x * distance.x) / distance.x;
-    //     let x = 0;
-    //     let timer=setInterval(()=>{
-    //         x += 10;
-    //         if(214.6>=this.car.offsetLeft){
-    //             clearInterval(timer);
-    //             this.box.removeChild(clonebox);
-    //         }else{
-    //             clonebox.style.left = position.x + x + 'px';
-    //             clonebox.style.top = position.y + a * x * x + b * x + 'px';
-    //         }
-    //     },1000/60)
-    // }
-
     //存购物车
     save() {
         let username = cookie.getcookie('username');

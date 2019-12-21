@@ -13,7 +13,8 @@ if (document.querySelector("#index")) {
     new Drender().init();
     new Detailslogin().init();
     new Magnifying().init();
-} else if (document.querySelector("#cart")) {
+}
+ else if (document.querySelector("#cart")) {
     new Cartlogin().init();
     new Cartrender().init();
 }
